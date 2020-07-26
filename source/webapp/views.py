@@ -27,7 +27,6 @@ def task_create_view(request):
         status = request.POST.get('status')
         date = request.POST.get('created_at')
         article = Article.objects.create(description=description, text=text, status=status, created_at=date)
-        # context = {'article': article}
         return redirect('task_view', pk=article.pk)
     else:
         return HttpResponseNotAllowed(permitted_methods=['GET', 'POST'])
