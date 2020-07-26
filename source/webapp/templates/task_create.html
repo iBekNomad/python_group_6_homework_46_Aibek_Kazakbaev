@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Create{% endblock %}
+
+{% block content %}
+    <form class="d-flex align-items-start flex-column mt-5" action="{% url 'task_create' %}" method="post">
+        {% csrf_token %}
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Description:</span>
+            </div>
+            <input type="text" name="description" class="form-control" aria-label="Sizing example input"
+                   aria-describedby="inputGroup-sizing-default">
+        </div>
+        <br/>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Text: </span>
+            </div>
+            <textarea type="text" class="form-control" name="text" id="exampleFormControlTextarea1" rows="5"></textarea>
+        </div>
+        <br/>
+        <select class="custom-select" name="status" id="inputGroupSelect01">
+            <option selected>Status...</option>
+            {% for choice in status_choices %}
+                <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+            {% endfor %}
+        </select><br/>
+        <label>Date:</label>
+        <input type="date" value="YYYY-MM-DD" name="created_at"/>
+        <br/>
+        <button type="submit" class="btn btn-info mt-2 btn-lg btn-block text-uppercase" value="Send">Add</button>
+    </form>
+{% endblock %}
+

@@ -1,22 +1,40 @@
 body {
-	background-color: #51555f;
+    /* отступ, чтобы компенсировать высоту навбара */
+    margin-top: 60px;
 }
 
-.m_b_15 {
-	margin-bottom: 15px;
+.navbar {
+    display: block;
+    background: #6a7dff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    font-size: 0;
+    box-sizing: border-box;
+    padding: 7px 30px;
 }
 
-.not_found {
-	width: 50%;
+.menu {
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
     display: inline-block;
-    padding-bottom: 100%;
-    padding-top: 30%;
-	text-align: center;
-}
-.not_found h1 {
-	font-size: 100px;
+    color: #fffee8;
 }
 
-.not_found h2 {
-	font-size: 84px;
+.menu li {
+    display: inline-block;
+}
+
+.menu a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    padding: 5px 15px;
+}
+
+.menu a:hover {
+    color: #ffc122;
 }
